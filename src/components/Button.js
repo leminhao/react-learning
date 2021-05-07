@@ -5,8 +5,7 @@ class Button extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.decrement} className="decrement">Decrement</button>
-        <button onClick={this.props.increment} className="increment" >Increment</button>
+        <button onClick={this.props.value} className={`"${this.props.name}"`}>{this.props.children}</button>
       </div>
     );
   }

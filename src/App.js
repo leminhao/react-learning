@@ -31,9 +31,16 @@ class App extends Component {
               clicks={this.state.clicks}
             />
             <Button
-              decrement={this.decrement}
-              increment={this.increment}
+              value={this.decrement}
+              name="decrement"
+              children='Decrement'
             />
+            <Button
+              value={this.increment}
+              name="increment"
+              children='Increment'
+            />
+ 
           </div>
         </div>
       </div>
