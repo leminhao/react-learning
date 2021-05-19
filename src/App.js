@@ -1,6 +1,17 @@
 import React from "react";
 import Input from "./components/Input";
 import List from "./components/List";
+import styled, { css } from 'styled-components';
+
+const WrapperForm = styled.div`
+background-color: #FAEBD7;
+width: 40%;
+margin: 5rem auto;
+
+`
+
+const WrapperList = styled(WrapperForm)`
+margin: 1rem auto;`
 
 class App extends React.Component {
   constructor(props) {
@@ -74,7 +85,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
+      <WrapperForm>
         <form
           onSubmit={this.state.isEditing ? this.update : this.add}
           method="POST"
@@ -102,13 +114,16 @@ class App extends React.Component {
             value={this.state.isEditing ? "Update" : "Save"}
           />
         </form>
+        </WrapperForm>
+        <WrapperList>
         <List
           products={this.state.products}
           view={this.view}
           edit={this.edit}
           delete={this.delete}
         ></List>
-      </>
+        </WrapperList>
+      </React.Fragment>
     );
   }
 }

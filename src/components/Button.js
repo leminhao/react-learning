@@ -1,7 +1,7 @@
 import React from "react";
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
-const ButtonView = styled.button`
+const ButtonStyled = styled.button`
   color: palevioletred;
   font-size: 0.75em;
   margin: 0.1em;
@@ -10,12 +10,8 @@ const ButtonView = styled.button`
   border-radius: 3px;
 `;
 
-class Button extends React.Component {
-  render() {
-    return (
-      <ButtonView onClick={this.props.onClick}>{this.props.children}</ButtonView>
-    );
-  }
-}
+const Button = (props) => {
+  return <ButtonStyled onClick={props.onClick}>{props.children}</ButtonStyled>;
+};
 
 export default Button;

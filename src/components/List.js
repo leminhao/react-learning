@@ -2,29 +2,27 @@ import React from "react";
 import Button from "./Button";
 import styled, { css } from 'styled-components';
 
-const LiView = styled.li`
+const LiStyled = styled.li`
   list-style: none
 `
 
-class List extends React.Component {
-  render() {
+const List = (props) => {
     return (
       <div>
         <ul>
-          {this.props.products.map((item, index) => (
-            <LiView key={index}>
+          {props.products.map((item, index) => (
+            <LiStyled key={index}>
               {item.name} | {item.model}{" "}
               <span >
-                <Button onClick={(e) => this.props.view(item, e)} children="View"></Button>
-                <Button onClick={(e) => this.props.edit(index, e)} children="Edit"></Button>
-                <Button onClick={(e) => this.props.delete(index, e)} children="Delete"></Button>
+                <Button onClick={(e) => props.view(item, e)} >View</Button>
+                <Button onClick={(e) => props.edit(index, e)} >Edit</Button>
+                <Button onClick={(e) => props.delete(index, e)} >Delete</Button>
               </span>
-            </LiView>
+            </LiStyled>
           ))}
         </ul>
       </div>
     );
   }
-}
 
 export default List;

@@ -1,38 +1,39 @@
 import React from "react";
 import styled, { css } from 'styled-components';
 
-const InputView = styled.input`
+const InputStyled = styled.input`
   padding: 0.5em;
   margin: 0.5em;
   color: palevioletred;
-  background: papayawhip;
   border: none;
   display: block;
+  margin: 1rem auto;
+  
 
 `;
 
-const LabelView = styled.label`
-  color: palevioletred;
+const LabelStyled = styled.label`
+  color: # 8B8378;
   background: papayawhip;
+  margin: 12rem 12rem 6rem;
+
 `;
 
 
-class Input extends React.Component {
-  render() {
+const Input = (props) => {
     return (
-      <React.Fragment>
-        <LabelView>
-          {this.props.labelName}
-          <InputView
-            type={this.props.type}
-            placeholder={this.props.placeholder}
-            value={this.props.value}
-            onChange={this.props.onChange}
+      <>
+        <LabelStyled>
+          {props.labelName}
+          <InputStyled
+            type={props.type}
+            placeholder={props.placeholder}
+            value={props.value}
+            onChange={props.onChange}
           />
-        </LabelView>
-      </React.Fragment>
+        </LabelStyled>
+      </>
     );
-  }
 }
 
 export default Input;
